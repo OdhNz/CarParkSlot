@@ -16,6 +16,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +42,8 @@ public class CarParkService {
         this.restTemplate = restTemplate;
 
         ClassPathResource resource = new ClassPathResource("static/HDBCarparkInformation.csv");
-        FileReader reader = new FileReader(resource.getFile());
+        InputStream inputStream = resource.getInputStream();
+        InputStreamReader reader = new InputStreamReader(inputStream);
         CsvToBean<CarPark> csvToBean = new CsvToBeanBuilder<CarPark>(reader)
                 .withType(CarPark.class)
                 .withIgnoreLeadingWhiteSpace(true)
