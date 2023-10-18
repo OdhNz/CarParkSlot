@@ -12,7 +12,7 @@ mvn clean spring-boot:run
 
 ## Usage
 
-```python
+```bash
 Replace with your token
 
 #onemap.api.token=your token
@@ -20,6 +20,14 @@ Replace with your token
 ```
 Get Your token [onemap](https://www.onemap.gov.sg/)
 
+## Using Docker 
+
+```bash
+docker compose build
+```
+```bash
+docker compose up java_app
+```
 ## Test Api
 
 Request: 
